@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Navbar from '../navbar';
+import Header from '../header';
 
 import './app.css';
 
 const App = () => {
   return (
     <>
-      <Navbar/>
+      <Header/>
     </>
   );
 }
