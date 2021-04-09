@@ -1,13 +1,13 @@
 import React from 'react';
 
-import NavBar from '../nav-bar';
+import Navbar from '../navbar';
 
 import './app.css';
 
 const App = () => {
   return (
     <>
-      <NavBar/>
+      <Navbar/>
     </>
   );
 }
