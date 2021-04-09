@@ -1,0 +1,9 @@
+.navbar-panel {
+    width: 30%;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.navbar-panel > * {
+    margin-right: 20px;
+}

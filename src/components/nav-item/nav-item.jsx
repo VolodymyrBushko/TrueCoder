@@ -2,10 +2,10 @@ import React from 'react';
 
 import './nav-item.css';
 
-const NavItem = () => {
+const NavItem = ({text, href}) => {
   return (
     <li className="nav-item">
-      <a className="nav-link" href="#">Home</a>
+      <a className="nav-link" href={href}>{text}</a>
     </li>
   );
 }

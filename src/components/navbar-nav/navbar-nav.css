@@ -1,0 +1,8 @@
+.navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-nav > *:not(:last-child) {
+    margin-right: 30px;
+}

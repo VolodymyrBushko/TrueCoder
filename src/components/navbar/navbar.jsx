@@ -3,6 +3,7 @@ import React from 'react';
 import NavbarBrand from '../navbar-brand';
 import NavbarToggler from '../navbar-toggler';
 import NavbarCollapse from '../navbar-collapse';
+import NavbarPanel from '../navbar-panel';
 
 import './navbar.css';
 
@@ -12,6 +13,7 @@ const Navbar = () => {
       <NavbarBrand href="#" text="TrueCoder"/>
       <NavbarToggler/>
       <NavbarCollapse/>
+      <NavbarPanel/>
     </nav>
   );
 }
