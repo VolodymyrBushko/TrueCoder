@@ -1,0 +1,23 @@
+.navbar-brand .link {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-brand .link .lower-slash {
+    font-size: 32px;
+    font-weight: bold;
+    animation-name: lower-slash-animation;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: step-end;
+}
+
+@keyframes lower-slash-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

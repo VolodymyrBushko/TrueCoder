@@ -2,9 +2,14 @@ import React from 'react';
 
 import './navbar-brand.css';
 
-const NavbarBrand = () => {
+const NavbarBrand = ({text, href}) => {
   return (
-    <a className="navbar-brand" href="#">Navbar</a>
+    <span className="navbar-brand">
+      <a className="link" href={href}>
+        {text}
+        <span className="lower-slash">_</span>
+      </a>
+    </span>
   );
 }
 
