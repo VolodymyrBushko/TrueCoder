@@ -13,10 +13,12 @@ const Row = ({left, right, sizeL = 6, sizeR = 6, defaultSize = 12}) => {
   }
 
   if (left) {
-    columnL = <div className={`col-${hasAllColumns ? sizeL : defaultSize}`}>{left}</div>;
+    columnL = (<div
+      className={`col-${hasAllColumns ? sizeL : defaultSize}`}>{left}</div>);
   }
   if (right) {
-    columnR = <div className={`col-${hasAllColumns ? sizeR : defaultSize}`}>{right}</div>;
+    columnR = (<div
+      className={`col-${hasAllColumns ? sizeR : defaultSize}`}>{right}</div>);
   }
 
   return (

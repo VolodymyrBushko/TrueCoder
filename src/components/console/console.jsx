@@ -5,7 +5,9 @@ import './console.css';
 const Console = () => {
   return (
     <div className="console">
-      console
+      <textarea rows="5" className="console-area">
+
+      </textarea>
     </div>
   );
 }

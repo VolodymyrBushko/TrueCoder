@@ -1,0 +1,15 @@
+.note {
+    background-color: #E7F3FE;
+    padding: 30px;
+    margin: 10px 10px 30px 10px;
+    border-radius: 10px;
+}
+
+.note .content {
+    border-left: 5px solid #2196F3;
+    padding-left: 15px;
+}
+
+.note .content .text {
+    font-size: 16px;
+}

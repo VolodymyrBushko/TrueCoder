@@ -6,11 +6,11 @@ import Console from '../console';
 
 import './monitor.css';
 
-//import backgroundImage from './monitor.png';
+import image from './monitor.png';
 
 const Monitor = () => {
   return (
-    <div className="monitor container">
+    <div className="monitor container" style={{backgroundImage: `url(${image})`}}>
       <Row left={<CodeEditor/>}/>
       <Row left={<Console/>}/>
     </div>
