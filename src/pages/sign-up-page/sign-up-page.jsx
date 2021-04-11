@@ -1,8 +1,9 @@
 import React from 'react';
 
-import './sign-up-page.css';
 import FormField from '../../components/form-field';
 import SubmitButton from '../../components/submit-button';
+
+import './sign-up-page.css';
 
 const SignUpPage = () => {
   return (
