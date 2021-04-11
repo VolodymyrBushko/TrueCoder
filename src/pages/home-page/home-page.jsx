@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Note from '../note';
-import Monitor from '../monitor';
+import Note from '../../components/note';
+import Monitor from '../../components/monitor';
+import Row from '../../components/row';
 
-import './main.css';
-import Row from '../row';
+import './home-page.css';
 
-const Main = () => {
+const HomePage = () => {
 
   const noteText = 'Fix the following code to run it!';
 
@@ -18,4 +18,4 @@ const Main = () => {
   );
 }
 
-export default Main;
+export default HomePage;

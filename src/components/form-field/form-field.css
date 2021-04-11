@@ -1,0 +1,15 @@
+.form-field {
+    margin: 10px 0 10px 0;
+}
+
+.form-field .label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-field .field {
+    padding: 10px;
+}
+
+.form-field .error {
+    color: red;
+}
