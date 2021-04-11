@@ -6,7 +6,7 @@ const LanguageAbout = ({image, title, text}) => {
   return (
     <div className="language-about">
       <img src={image} alt="language about" className="image"/>
-      <div className="content">
+      <div className="content text-white">
         <h2 className="title">{title}</h2>
         <p className="text">{text}</p>
       </div>
