@@ -13,7 +13,6 @@ const NavbarNav = () => {
       <NavItem href="#" text="Python"/>
       <NavItem href="#" text="Ruby"/>
       <NavItem href="#" text="PHP"/>
-      <NavItem href="#" text="Dart"/>
     </ul>
   );
 }
