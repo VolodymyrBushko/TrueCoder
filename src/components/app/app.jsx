@@ -4,10 +4,13 @@ import Header from '../header';
 // import HomePage from '../../pages/home-page';
 // import SignInPage from '../../pages/sign-in-page';
 // import SignUpPage from '../../pages/sign-up-page';
-import ExercisesPage from '../../pages/exercises-page';
+// import ExercisesPage from '../../pages/exercises-page';
+// import ExecuteExercisePage from '../../pages/execute-exercise-page';
+import ProfilePage from '../../pages/profile-page';
 import Footer from '../footer';
 
 import './app.css';
+import Monitor from '../monitor';
 
 const App = () => {
   return (
@@ -16,7 +19,9 @@ const App = () => {
       {/*<HomePage/>*/}
       {/*<SignInPage/>*/}
       {/*<SignUpPage/>*/}
-      <ExercisesPage/>
+      {/*<ExercisesPage/>*/}
+      {/*<ExecuteExercisePage/>*/}
+      <ProfilePage/>
       <Footer/>
     </>
   );

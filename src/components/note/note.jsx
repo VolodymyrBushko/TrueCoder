@@ -2,10 +2,10 @@ import React from 'react';
 
 import './note.css';
 
-const Note = ({text}) => {
+const Note = ({text, textColor}) => {
   return (
     <div className="note">
-      <div className="content">
+      <div className={`content ${textColor}`}>
         <span className="text">
           <b>Note:</b><br/>
           {text}
