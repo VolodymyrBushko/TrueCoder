@@ -1,0 +1,8 @@
+.profile-image-wrap {
+    text-align: center;
+}
+
+.profile-image-wrap > .image {
+    border-radius: 50%;
+    width: 256px;
+}
