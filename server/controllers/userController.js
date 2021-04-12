@@ -16,7 +16,7 @@ module.exports = {
       const salt = await bcrypt.genSalt(10);
       password = await bcrypt.hash(password, salt);
 
-      newPostRef.set({login, email, password});
+      newPostRef.set({login, email, password, isAdmin: false});
       await res.status(201).json({login, email, password});
 
     } catch (ex) {
@@ -31,7 +31,7 @@ module.exports = {
       const ref = global.db.ref('/').child('users');
       const {login, password} = req.body;
 
-      ref.orderByChild("login").equalTo(login).on("child_added", snapshot => {
+      ref.orderByChild('login').equalTo(login).on('child_added', snapshot => {
 
         const {login: dblogin, email: dbemail, password: dbpassword} = snapshot.val();
         const passwordResult = bcrypt.compareSync(password, dbpassword);

@@ -4,6 +4,7 @@ const config = require('config');
 const admin = require('firebase-admin');
 
 const userRouter = require('./routes/userRouter.js');
+const exerciseRouter = require('./routes/exerciseRouter.js');
 
 const PORT = config.get('port');
 const serviceAccount = require('./config/firebase-admin.json');
@@ -32,6 +33,7 @@ async function start() {
 }
 
 app.use('/api/users/', userRouter);
+app.use('/api/exercises/', exerciseRouter);
 
 start();
 
