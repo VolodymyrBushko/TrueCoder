@@ -5,10 +5,11 @@
 
 # server IDE
 server/.idea/
-server/node_modules/
 
-# server config
+# server
+server/node_modules/
 server/config/
+server/.rest
 
 # dependencies
 /node_modules

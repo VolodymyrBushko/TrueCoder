@@ -11,6 +11,9 @@ const ProfilePage = () => {
     {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'C++', complete: '60%'},
     {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'C#', complete: '30%'},
     {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'Java', complete: '90%'},
+    {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'Java', complete: '90%'},
+    {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'Java', complete: '90%'},
+    {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'Java', complete: '90%'},
   ];
   return (
     <div className="profile-page container">

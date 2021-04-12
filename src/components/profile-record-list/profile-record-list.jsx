@@ -9,7 +9,7 @@ const ProfileRecordList = ({records}) => {
     <div className="profile-record-list container">
       <div className="row justify-content-center">
         {records.map(record => (
-          <div className="col-xl-3 col-sm-6 col-12">
+          <div className="col-xl-4 col-sm-6 col-12 mt-5">
             <ProfileRecordListItem {...record}/>
           </div>
         ))}

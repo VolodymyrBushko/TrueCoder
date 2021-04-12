@@ -12,7 +12,7 @@ const Monitor = () => {
   return (
     <div className="monitor container" style={{backgroundImage: `url(${image})`}}>
       <Row left={<CodeEditor/>}/>
-      <Row left={<Console/>}/>
+      {/*<Row left={<Console/>}/>*/}
     </div>
   );
 }

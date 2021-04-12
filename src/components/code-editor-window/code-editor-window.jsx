@@ -1,43 +1,21 @@
-import React, {useState, useEffect} from 'react';
-import Prism from "prismjs";
+import React, {useEffect} from 'react';
 
 import './code-editor-window.css';
 
-const CodeEditorWindow = props => {
-  const [content, setContent] = useState(props.content);
-
-  const handleKeyDown = evt => {
-    let value = content,
-      selStartPos = evt.currentTarget.selectionStart;
-    if (evt.key === "Tab") {
-      value =
-        value.substring(0, selStartPos) +
-        "    " +
-        value.substring(selStartPos, value.length);
-      evt.currentTarget.selectionStart = selStartPos + 3;
-      evt.currentTarget.selectionEnd = selStartPos + 4;
-      evt.preventDefault();
-
-      setContent(value);
-    }
-  };
+const CodeEditorWindow = () => {
 
   useEffect(() => {
-    Prism.highlightAll();
-  }, [props.language, content]);
+    // eslint-disable-next-line no-undef
+    const editor = ace.edit("editor");
+    editor.setTheme('ace/theme/dracula');
+    editor.session.setMode("ace/mode/java");
+    return () => {}
+  }, []);
 
   return (
     <div className="code-edit-container">
-      <textarea
-        className="code-input"
-        value={content}
-        rows={14}
-        onChange={evt => setContent(evt.target.value)}
-        onKeyDown={handleKeyDown}
-      />
-      <pre className="code-output">
-        <code className={`language-${props.language}`}>{content}</code>
-      </pre>
+      <div id="editor">
+      </div>
     </div>
   );
 }
