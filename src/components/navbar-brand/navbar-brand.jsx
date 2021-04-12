@@ -1,14 +1,15 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 import './navbar-brand.css';
 
 const NavbarBrand = ({text, href}) => {
   return (
     <span className="navbar-brand">
-      <a className="link" href={href}>
-        {text}
+      <Link to={href} className="link">
+         {text}
         <span className="lower-slash">_</span>
-      </a>
+      </Link>
     </span>
   );
 }

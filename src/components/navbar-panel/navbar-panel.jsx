@@ -7,10 +7,10 @@ import './navbar-panel.css';
 const NavbarPanel = () => {
   return (
     <ul className="navbar-panel">
-      {/*<NavbarPanelItem href="#" text="Admin panel"/>*/}
-      {/*<NavbarPanelItem href="#" text="Profile"/>*/}
-      <NavbarPanelItem href="#" text="Sign in"/>
-      <NavbarPanelItem href="#" text="Sign up"/>
+      <NavbarPanelItem href="/admin" text="Admin"/>
+      <NavbarPanelItem href="/profile" text="Profile"/>
+      <NavbarPanelItem href="/sign-in" text="Sign in"/>
+      <NavbarPanelItem href="/sign-up" text="Sign up"/>
       {/*<NavbarPanelItem href="#" text="Sign out"/>*/}
     </ul>
   );

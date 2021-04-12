@@ -6,14 +6,16 @@ import ProfileRecordList from '../../components/profile-record-list';
 
 import './profile-page.css';
 
+import images from './images';
+
 const ProfilePage = () => {
   const records = [
-    {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'C++', complete: '60%'},
-    {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'C#', complete: '30%'},
-    {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'Java', complete: '90%'},
-    {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'Java', complete: '90%'},
-    {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'Java', complete: '90%'},
-    {image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/cpp/cpp_64x64.png?raw=true', title: 'Java', complete: '90%'},
+    {image: images[0], title: 'C++', complete: 60},
+    {image: images[1], title: 'C#', complete: 30},
+    {image: images[2], title: 'Java', complete: 10},
+    {image: images[3], title: 'Python', complete: 10},
+    {image: images[4], title: 'Ruby', complete: 20},
+    {image: images[5], title: 'PHP', complete: 30},
   ];
   return (
     <div className="profile-page container">
@@ -26,9 +28,11 @@ const ProfilePage = () => {
 
       <div className="row justify-content-center">
         <div className="col-8">
-          <ProfileData login="Volodymyr" email="volodymyr.bushko@gmail.com" id="sadasdasgfd1234fdf5"/>
+          <ProfileData login="Volodymyr" email="volodymyrbush@gmail.com" id="MY4MVP_BesZJOog8OjP"/>
         </div>
       </div>
+
+      <hr style={{backgroundColor: 'rgba(255, 255, 255, 0.8)'}}/>
 
       <div className="row">
         <div className="col">

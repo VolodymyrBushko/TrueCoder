@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 import './nav-item.css';
 
 const NavItem = ({text, href}) => {
   return (
     <li className="nav-item">
-      <a className="nav-link" href={href}>{text}</a>
+      <Link to={href} className="nav-link">{text}</Link>
     </li>
   );
 }

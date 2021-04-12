@@ -10,7 +10,7 @@ import './navbar.css';
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <NavbarBrand href="#" text="TrueCoder"/>
+      <NavbarBrand href="/" text="TrueCoder"/>
       <NavbarToggler/>
       <NavbarCollapse/>
       <NavbarPanel/>
