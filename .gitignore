@@ -3,6 +3,12 @@
 # IDE
 .idea/
 
+# server IDE
+server/.idea/
+
+# server config
+server/config/
+
 # dependencies
 /node_modules
 /.pnp
