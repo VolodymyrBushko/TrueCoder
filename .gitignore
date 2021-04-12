@@ -5,6 +5,7 @@
 
 # server IDE
 server/.idea/
+server/node_modules/
 
 # server config
 server/config/
