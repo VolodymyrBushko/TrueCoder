@@ -1,0 +1,26 @@
+POST http://localhost:5000/api/exercises/verifyExercise
+Content-Type: application/json
+
+{
+  "struct": "public class Main { public static void main(String[] args) { System.out.println(\"Hello\"); } }",
+  "language": "java"
+}
+
+###
+GET http://localhost:5000/api/exercises/javascript
+Accept: application/json
+
+###
+POST http://localhost:5000/api/exercises/
+Content-Type: application/json
+
+{
+  "title": "exercises-1",
+  "description": "fix the code",
+  "difficulty": "easy",
+  "struct": "function app(){console('123')}",
+  "result": "'123'",
+  "language": "javascript"
+}
+
+###
