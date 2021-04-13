@@ -1,5 +1,6 @@
 const request = require("request");
 const config = require('config');
+const Exercise = require('../models/Exercise');
 
 const clientId = config.get('clientId');
 const clientSecret = config.get('clientSecret');
@@ -11,14 +12,16 @@ module.exports = {
 
       const postsRef = global.db.ref('/').child('exercises');
       const newPostRef = postsRef.push();
+      const exercise = new Exercise();
 
-      const {title, description, difficulty, struct, result, language} = req.body;
+      for (const key of Object.keys(req.body)) {
+        exercise[key] = req.body[key];
+      }
 
-      newPostRef.set({title, description, difficulty, struct, result, language});
-      await res.status(201).json({title, description, difficulty, struct, result, language});
+      newPostRef.set(exercise);
+      await res.status(201).json(exercise);
 
     } catch (ex) {
-      console.log(ex);
       await res.status(500).json({message: ex.message});
     }
   },
@@ -28,15 +31,19 @@ module.exports = {
 
       const ref = global.db.ref('/exercises');
       const language = req.params.language;
+      let exercises = null;
 
-      ref.orderByChild('language').equalTo(language).on("child_added", snapshot => {
-        res.status(200).json({id: snapshot.key, ...snapshot.val()});
-      }, error => {
-        res.status(500).json({message: error.message});
+      await ref.orderByChild('language').equalTo(language).once('value', async (snapshot) => {
+        exercises = await snapshot.val();
       });
 
+      if (exercises) {
+        res.status(200).json(exercises);
+      } else {
+        res.status(404).json({message: `Not found any exercise by ${language}`})
+      }
+
     } catch (ex) {
-      console.log(ex);
       await res.status(500).json({message: ex.message});
     }
   },
@@ -44,7 +51,7 @@ module.exports = {
   async verifyExercise(req, res) {
     try {
 
-      const {struct: script, language, result} = req.body;
+      const {code: script, language, expectedResult} = req.body;
       const program = {script, language, versionIndex: '0', clientId, clientSecret};
 
       request({
@@ -53,21 +60,15 @@ module.exports = {
           json: program
         },
         function (error, response, body) {
-          console.log("error:", error);
-          console.log("body:", body);
-
           if (error) {
             res.status(400).json({message: error});
           } else {
-            const output = body.output;
-            let hasError = output !== result;
-            res.status(200).json({output, hasError});
+            let hasError = body.output !== expectedResult;
+            res.status(200).json({output: body.output, hasError});
           }
-
         });
 
     } catch (ex) {
-      console.log(ex);
       await res.status(500).json({message: ex.message});
     }
   }
