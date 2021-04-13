@@ -5,11 +5,11 @@ import CodeEditorWindow from '../code-editor-window';
 
 import './code-editor.css';
 
-const CodeEditor = () => {
+const CodeEditor = ({code}) => {
   return (
     <div className="code-editor">
       <PlayButton/>
-      <CodeEditorWindow/>
+      <CodeEditorWindow code={code}/>
     </div>
   );
 }

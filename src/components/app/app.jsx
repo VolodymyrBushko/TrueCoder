@@ -25,10 +25,10 @@ const App = () => {
         <Route exact path="/">
           <HomePage/>
         </Route>
-        <Route path="/exercises">
+        <Route path="/exercises/:language">
           <ExercisesPage/>
         </Route>
-        <Route path="/execute-exercise">
+        <Route path="/execute-exercise/:id">
           <ExecuteExercisePage/>
         </Route>
         <Route path="/profile">

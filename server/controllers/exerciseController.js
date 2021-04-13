@@ -33,7 +33,7 @@ module.exports = {
       const language = req.params.language;
       let exercises = [];
 
-      await ref.orderByChild('language').equalTo(language).once('value', async (snapshot) => {
+      await ref.orderByChild('language').equalTo(language).once('value', async snapshot => {
         const elements = await snapshot.val();
         for (const key of Object.keys(elements)) {
           let exercise = {id: key};
@@ -48,6 +48,29 @@ module.exports = {
         res.status(200).json(exercises);
       } else {
         res.status(404).json({message: `Not found any exercise by ${language}`})
+      }
+
+    } catch (ex) {
+      await res.status(500).json({message: ex.message});
+    }
+  },
+
+  async getExercise(req, res) {
+    try {
+
+      const ref = global.db.ref('/exercises');
+      const id = req.params.id;
+      let exercise = null;
+
+      await ref.child(id).once('value', async snapshot => {
+        exercise = await snapshot.val();
+        exercise.id = id;
+      });
+
+      if (exercise) {
+        res.status(200).json(exercise);
+      } else {
+        res.status(404).json({message: `Not found any exercise with id: ${id}`})
       }
 
     } catch (ex) {
