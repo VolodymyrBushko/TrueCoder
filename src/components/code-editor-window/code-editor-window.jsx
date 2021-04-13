@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 
 import './code-editor-window.css';
 
-const CodeEditorWindow = ({code}) => {
+const CodeEditorWindow = ({code, updateCode}) => {
 
   useEffect(() => {
 
@@ -10,6 +10,10 @@ const CodeEditorWindow = ({code}) => {
     const editor = ace.edit('editor');
     editor.setTheme('ace/theme/dracula');
     editor.session.setMode('ace/mode/java');
+
+    editor.session.on('change', () => {
+      updateCode(editor.getValue());
+    });
 
     return () => {}
   }, []);

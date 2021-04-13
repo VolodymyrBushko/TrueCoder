@@ -17,6 +17,19 @@ class ExerciseService {
     }
     return await res.json();
   }
+
+  verifyExercise = async exercise => {
+    const res = await fetch(`${this.baseUrl}verifyExercise`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(exercise)
+    });
+    return await res.json();
+  }
+
 }
 
 export default ExerciseService;

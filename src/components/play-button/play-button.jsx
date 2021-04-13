@@ -4,9 +4,9 @@ import './play-button.css';
 
 import icon from './play-icon.png';
 
-const PlayButton = () => {
+const PlayButton = ({verifyCodeHandler}) => {
   return (
-    <button className="play-button">
+    <button className="play-button" onClick={verifyCodeHandler}>
       <img src={icon} alt="icon" className="icon"/>
     </button>
   );
