@@ -33,7 +33,7 @@ module.exports = {
 
       ref.orderByChild('login').equalTo(login).on('child_added', snapshot => {
 
-        const {login: dblogin, email: dbemail, password: dbpassword} = snapshot.val();
+        const {login: dblogin, email: dbemail, password: dbpassword, isAdmin} = snapshot.val();
         const passwordResult = bcrypt.compareSync(password, dbpassword);
 
         if (passwordResult) {
@@ -42,7 +42,7 @@ module.exports = {
             login: dblogin,
             email: dbemail
           }, jwtSecret, {expiresIn: 60 * 60 * 60});
-          res.json({token: `Bearer ${token}`});
+          res.json({token: `Bearer ${token}`, isAdmin});
         } else {
           res.status(401).json({message: 'invalid login or password'});
         }
