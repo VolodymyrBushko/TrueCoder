@@ -4,13 +4,13 @@ import {Link} from 'react-router-dom';
 import './exercises-list-item.css';
 
 const ExercisesListItem = ({exercise}) => {
-  const {id, link, title, content, difficulty} = exercise;
+  const {id, title, description, difficulty} = exercise;
   const colorStyle = getColorStyle(difficulty);
   return (
-    <li id={id} className="exercises-list-item">
-      <Link to={link} className={`link ${colorStyle}`}>
+    <li className="exercises-list-item">
+      <Link to={`/execute-exercise/${id}`} className={`link ${colorStyle}`}>
         <h2 className="title">{title}</h2>
-        <p className="content">{content}</p>
+        <p className="description">{description}</p>
       </Link>
     </li>
   );

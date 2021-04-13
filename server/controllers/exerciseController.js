@@ -31,10 +31,17 @@ module.exports = {
 
       const ref = global.db.ref('/exercises');
       const language = req.params.language;
-      let exercises = null;
+      let exercises = [];
 
       await ref.orderByChild('language').equalTo(language).once('value', async (snapshot) => {
-        exercises = await snapshot.val();
+        const elements = await snapshot.val();
+        for (const key of Object.keys(elements)) {
+          let exercise = {id: key};
+          for (const nestedKey of Object.keys(elements[key])) {
+            exercise[nestedKey] = elements[key][nestedKey];
+          }
+          exercises.push(exercise);
+        }
       });
 
       if (exercises) {

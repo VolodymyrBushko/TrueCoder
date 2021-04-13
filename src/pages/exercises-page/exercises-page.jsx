@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import ExercisesList from '../../components/exercises-list';
 import LanguageAbout from '../../components/language-about';
@@ -6,22 +6,42 @@ import CardList from '../../components/card-list';
 import Button from '../../components/button';
 
 import './exercises-page.css';
-
 import images from './images';
+
+import ExerciseService from '../../services/exercise-service';
+const exerciseService = new ExerciseService();
 
 const ExercisesPage = () => {
 
-  const [exerciseList, useExerciseList] = useState([
-    {id: 1, link: '/execute-exercise', title: 'title-1', content: 'content-1', difficulty: 'easy'},
-    {id: 2, link: '/execute-exercise', title: 'title-2', content: 'content-2', difficulty: 'medium'},
-    {id: 3, link: '/execute-exercise', title: 'title-3', content: 'content-3', difficulty: 'hard'},
-    {id: 4, link: '/execute-exercise', title: 'title-4', content: 'content-4', difficulty: 'easy'},
-    {id: 5, link: '/execute-exercise', title: 'title-5', content: 'content-5', difficulty: 'medium'},
-  ]);
+  useEffect(() => {
+    exerciseService.getExercises('cpp')
+      .then(res => setExerciseList(res))
+      .catch(err => console.log(err));
+  }, []);
+
+  const [exerciseList, setExerciseList] = useState([]);
   const [cardList, setCardList] = useState([
-    {image: '', title: 'Easy', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since', background: 'bg-success', active: false},
-    {image: '', title: 'Medium', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since', background: 'bg-warning', active: false},
-    {image: '', title: 'Hard', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since', background: 'bg-danger', active: false},
+    {
+      image: '',
+      title: 'Easy',
+      text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since',
+      background: 'bg-success',
+      active: false
+    },
+    {
+      image: '',
+      title: 'Medium',
+      text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since',
+      background: 'bg-warning',
+      active: false
+    },
+    {
+      image: '',
+      title: 'Hard',
+      text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since',
+      background: 'bg-danger',
+      active: false
+    },
   ]);
 
   const setCardActive = title => {

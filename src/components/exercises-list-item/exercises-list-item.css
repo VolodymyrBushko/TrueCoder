@@ -44,11 +44,11 @@
     transition: transform .15s linear;
 }
 
-.exercises-list-item > .title {
+.exercises-list-item .title {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.4rem;
 }
 
-.exercises-list-item > .content {
-    font-size: 2rem;
+.exercises-list-item .description {
+    font-size: 1.2rem;
 }

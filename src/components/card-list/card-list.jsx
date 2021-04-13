@@ -10,8 +10,7 @@ const CardList = ({cardList, setCardActive}) => {
       <div className="row pb-5 mb-4 justify-content-center">
         {cardList.map((card, index) => (
           <div key={index} className="col-lg-3 col-md-6 mb-4 mb-lg-0">
-            {<CardListItem {...card}
-                           setCardActive={setCardActive}/>}
+            {<CardListItem {...card} setCardActive={setCardActive}/>}
           </div>
         ))}
       </div>

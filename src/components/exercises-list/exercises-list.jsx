@@ -8,7 +8,8 @@ const ExercisesList = ({exercises}) => {
   return (
     <div className="exercises-list-wrap">
       <ul className="content-list">
-        {exercises.map(exercise => <ExercisesListItem key={exercise.id} exercise={exercise}/>)}
+        {exercises.map(exercise =>
+          <ExercisesListItem key={exercise.id} exercise={exercise}/>)}
       </ul>
     </div>
   );
