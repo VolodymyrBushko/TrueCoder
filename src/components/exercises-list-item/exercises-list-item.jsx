@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import './exercises-list-item.css';
 
@@ -7,10 +8,10 @@ const ExercisesListItem = ({exercise}) => {
   const colorStyle = getColorStyle(difficulty);
   return (
     <li id={id} className="exercises-list-item">
-      <a href={link} className={`link ${colorStyle}`}>
+      <Link to={link} className={`link ${colorStyle}`}>
         <h2 className="title">{title}</h2>
         <p className="content">{content}</p>
-      </a>
+      </Link>
     </li>
   );
 }

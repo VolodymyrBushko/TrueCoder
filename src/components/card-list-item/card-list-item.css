@@ -1,0 +1,22 @@
+.card-list-item {
+    cursor: pointer;
+}
+
+.card-list-item-active {
+    opacity: 0.6;
+}
+
+.card-list-item-active-easy {
+    border-right: 5px solid #00BC8C !important;
+    border-bottom: 5px solid #00BC8C !important;
+}
+
+.card-list-item-active-medium {
+    border-right: 5px solid #F39C12 !important;
+    border-bottom: 5px solid #F39C12 !important;
+}
+
+.card-list-item-active-hard {
+    border-right: 5px solid #E74C3C !important;
+    border-bottom: 5px solid #E74C3C !important;
+}

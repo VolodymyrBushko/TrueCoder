@@ -2,9 +2,16 @@ import React from 'react';
 
 import './card-list-item.css';
 
-const CardListItem = ({image, title, text, background}) => {
+const CardListItem = ({image, title, text, background, active, setCardActive}) => {
+
+  const activeClasses = active ? `card-list-item-active card-list-item-active-${title.toLowerCase()}` : '';
+
+  const selectItem = () => {
+    setCardActive(title);
+  }
+
   return (
-    <div className="card-list-item card rounded shadow-sm border-0">
+    <div className={`card-list-item card rounded shadow-sm border-0 ${activeClasses}`} onClick={selectItem}>
       <div className="card-body p-0">
         <div className={`px-5 py-4 text-center card-img-top} ${background}`}>
           <img src={image} alt="card list item" width="100" className="rounded-circle mb-2 img-thumbnail d-block mx-auto"/>
